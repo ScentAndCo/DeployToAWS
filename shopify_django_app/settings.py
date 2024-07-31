@@ -33,7 +33,7 @@ ALLOWED_HOSTS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://thorough-donkey-evidently.ngrok-free.app",
+    "https://thorough-donkey-evidently.ngrok-free.app", "*"
 ]
 
 # Application definition
@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shopify_app.apps.ShopifyAppConfig',
     'home.apps.HomeConfig',
-    'csp',
+    'csp',  # Ensure this line is present
 ]
 
 MIDDLEWARE = [
