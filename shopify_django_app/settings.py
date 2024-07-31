@@ -62,6 +62,7 @@ MIDDLEWARE = [
     'csp.middleware.CSPMiddleware', 
 ]
 
+
 ROOT_URLCONF = 'shopify_django_app.urls'
 
 TEMPLATES = [
