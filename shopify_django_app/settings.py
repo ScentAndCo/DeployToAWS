@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shopify_app.apps.ShopifyAppConfig',
     'home.apps.HomeConfig',
-    'csp',  # Ensure this line is present
+    #'csp',  # Ensure this line is present
 ]
 
 MIDDLEWARE = [
@@ -59,7 +59,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'shopify_app.middleware.LoginProtection',
-    'csp.middleware.CSPMiddleware', 
+    #'csp.middleware.CSPMiddleware', 
 ]
 
 
@@ -144,10 +144,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # settings.py
 
-CSP_DEFAULT_SRC = ("'self'", "*")
-CSP_SCRIPT_SRC = ("'self'", "*", "'unsafe-inline'", "'unsafe-eval'")
-CSP_STYLE_SRC = ("'self'", "*", "'unsafe-inline'", "https://valid-strongly-raptor.ngrok-free.app")
-CSP_FRAME_ANCESTORS = ["*"]
+#CSP_DEFAULT_SRC = ("'self'", "*")
+#CSP_SCRIPT_SRC = ("'self'", "*", "'unsafe-inline'", "'unsafe-eval'")
+#CSP_STYLE_SRC = ("'self'", "*", "'unsafe-inline'", "https://valid-strongly-raptor.ngrok-free.app")
+#CSP_FRAME_ANCESTORS = ["*"]
 
 # Allow embedding
 X_FRAME_OPTIONS = 'ALLOWALL'
