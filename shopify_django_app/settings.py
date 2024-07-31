@@ -59,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'shopify_app.middleware.LoginProtection',
+    'shopify_app.middleware.ShopifyEmbeddingMiddleware'
     #'csp.middleware.CSPMiddleware', 
 ]
 

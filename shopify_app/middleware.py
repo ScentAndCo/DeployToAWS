@@ -1,6 +1,7 @@
 from django.apps import apps
 from django.urls import reverse
 import shopify
+from django.utils.deprecation import MiddlewareMixin
 
 class ConfigurationError(BaseException):
     pass
@@ -25,3 +26,9 @@ class LoginProtection(object):
         shopify.ShopifyResource.clear_session()
         return response
 
+
+class ShopifyEmbeddingMiddleware(MiddlewareMixin):
+    def process_response(self, request, response):
+        response['Content-Security-Policy'] = "frame-ancestors https://*.myshopify.com https://admin.shopify.com"
+        response['X-Frame-Options'] = 'ALLOWALL'
+        return response
