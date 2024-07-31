@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shopify_app.apps.ShopifyAppConfig',
     'home.apps.HomeConfig',
+    'corsheaders'
     #'csp',  # Ensure this line is present
 ]
 
@@ -59,9 +60,19 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'shopify_app.middleware.LoginProtection',
-    'shopify_app.middleware.ShopifyEmbeddingMiddleware'
+    'shopify_app.middleware.ShopifyEmbeddingMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     #'csp.middleware.CSPMiddleware', 
 ]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # Your local development server
+    "http://35.173.154.226:8000",  # Your AWS Elastic IP
+]
+
+# If you need to allow all origins (not recommended for production)
+CORS_ALLOW_ALL_ORIGINS = True
 
 
 ROOT_URLCONF = 'shopify_django_app.urls'
