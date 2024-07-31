@@ -33,7 +33,7 @@ ALLOWED_HOSTS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://thorough-donkey-evidently.ngrok-free.app", "*"
+    "https://thorough-donkey-evidently.ngrok-free.app",
 ]
 
 # Application definition
